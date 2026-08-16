@@ -4,12 +4,11 @@ echo "=== CrossOver Trial Reset Script ==="
 echo "Started at: $(date)"
 echo
 
-# 
-if ! command -v pgrep >/dev/null 2>&1; then
-    echo "[INFO] 'pgrep' not found. Installing."
-    brew install proctools || { echo "[ERROR] Failed to install pgrep. The script should still be able to continue."; }
+# Check if pidof exists, install if needed
+if ! command -v pidof >/dev/null 2>&1; then
+    echo "[INFO] 'pidof' not found. Installing via Homebrew..."
+    brew install pidof || { echo "[ERROR] Failed to install pidof. Exiting."; exit 1; }
 fi
-#
 
 # Locate CrossOver binary
 CO_PWD=~/Applications/CrossOver.app/Contents/MacOS
