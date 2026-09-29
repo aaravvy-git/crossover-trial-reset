@@ -6,8 +6,10 @@ echo
 
 # Locate CrossOver binary
 CO_PWD=~/Applications/CrossOver.app/Contents/MacOS
-[ -d "${CO_PWD}" ] || CO_PWD=/Applications/CrossOver.app/Contents/MacOS
-[ -d "${CO_PWD}" ] || { echo "[ERROR] Could not locate CrossOver binary. Exiting."; exit 1; }
+while [ ! -d "${CO_PWD}" ]; do
+    echo "[ERROR] Application not valid. Please provide the binary location."
+    read -r -p "Location: " CO_PWD
+done
 
 echo "[INFO] CrossOver path: ${CO_PWD}"
 
