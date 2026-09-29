@@ -4,13 +4,6 @@ echo "=== CrossOver Trial Reset Script ==="
 echo "Started at: $(date)"
 echo
 
-# 
-if ! command -v pgrep >/dev/null 2>&1; then
-    echo "[INFO] 'pgrep' not found. Installing."
-    brew install proctools || { echo "[ERROR] Failed to install pgrep. The script should still be able to continue."; }
-fi
-#
-
 # Locate CrossOver binary
 CO_PWD=~/Applications/CrossOver.app/Contents/MacOS
 [ -d "${CO_PWD}" ] || CO_PWD=/Applications/CrossOver.app/Contents/MacOS
