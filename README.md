@@ -62,8 +62,4 @@ This script is open-source and shared under the **MIT License**. Feel free to mo
 
 ## Troubleshooting
 
-If the script doesn't work as expected, here are some common issues and solutions:
-
-- **Script fails to find CrossOver**: Ensure that CrossOver is installed in the default path (`~/Applications/CrossOver.app` or `/Applications/CrossOver.app`). If you have CrossOver in a custom location, modify the script to reflect the correct path.
-
-If filepath isn't the part of your issue, open a issue on GitHub. https://github.com/stacle-studios/crossover-trial-reset
+Open a issue on GitHub. https://github.com/stacle-studios/crossover-trial-reset. Please provide the output of the script
