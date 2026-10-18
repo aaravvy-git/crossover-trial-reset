@@ -37,7 +37,9 @@ else
 fi
 
 # Clean bottle system.reg entries
-BOTTLE_DIR=~/Library/Application\ Support/CrossOver/Bottles
+BOTTLE_DIR="$(defaults read com.codeweavers.CrossOver BottleDir 2>/dev/null)"
+BOTTLE_DIR="${BOTTLE_DIR:-$HOME/Library/Application Support/CrossOver/Bottles}"
+BOTTLE_DIR="${BOTTLE_DIR/#\~/$HOME}"
 echo "[INFO] Cleaning system.reg entries from bottles..."
 for file in "${BOTTLE_DIR}"/*/system.reg; do
     [ -f "${file}" ] || continue
